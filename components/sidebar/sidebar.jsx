@@ -714,15 +714,22 @@ export default class Sidebar extends React.PureComponent {
                                     id='sidebar.channels'
                                     defaultMessage='PUBLIC CHANNELS'
                                 />
+                                {
+                                    /*
                                 <TeamPermissionGate
                                     teamId={this.props.currentTeam.id}
                                     permissions={[Permissions.CREATE_PUBLIC_CHANNEL]}
                                 >
-                                    {createPublicChannelIcon}
+                                    
+                                    createPublicChannelIcon
+                                    
                                 </TeamPermissionGate>
+                                */
+                                }
                             </h4>
                         </li>
                         {publicChannelItems}
+                        { /*
                         <li>
                             <button
                                 id='sidebarChannelsMore'
@@ -735,7 +742,10 @@ export default class Sidebar extends React.PureComponent {
                                 />
                             </button>
                         </li>
+                        */
+                        }
                     </ul>
+                    {/*
 
                     <ul className='nav nav-pills nav-stacked'>
                         <li>
@@ -767,6 +777,8 @@ export default class Sidebar extends React.PureComponent {
                         {directMessageItems}
                         {directMessageMore}
                     </ul>
+                    */
+                    }
                 </div>
                 <div className='sidebar__switcher'>
                     <button

@@ -3084,7 +3084,7 @@
   "web.footer.terms": "Terms",
   "web.header.back": "Back",
   "web.header.logout": "Logout",
-  "web.root.signup_info": "All team communication in one place, searchable and accessible anywhere",
+  "web.root.signup_info": "All your team communication in one place, searchable and accessible anywhere",
   "webrtc.busy": "{username} is busy.",
   "webrtc.call": "Call",
   "webrtc.callEnded": "Call with {username} ended.",

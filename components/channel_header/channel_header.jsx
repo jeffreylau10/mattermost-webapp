@@ -88,7 +88,7 @@ export default class ChannelHeader extends React.Component {
     constructor(props) {
         super(props);
 
-        const showSearchBar = Utils.windowWidth() > SEARCH_BAR_MINIMUM_WINDOW_SIZE;
+        const showSearchBar = false; // Utils.windowWidth() > SEARCH_BAR_MINIMUM_WINDOW_SIZE;
         this.state = {
             showSearchBar,
             showEditChannelHeaderModal: false,
@@ -514,7 +514,7 @@ export default class ChannelHeader extends React.Component {
                 </li>
             );
         } else {
-            dropdownContents.push(
+            /*dropdownContents.push(
                 <li
                     key='view_info'
                     role='presentation'
@@ -532,9 +532,9 @@ export default class ChannelHeader extends React.Component {
                         />
                     </ToggleModalButtonRedux>
                 </li>
-            );
+            );*/
 
-            if (this.props.isDefault) {
+            /*if (this.props.isDefault) {
                 dropdownContents.push(
                     <li
                         key='manage_members'
@@ -573,15 +573,16 @@ export default class ChannelHeader extends React.Component {
                     </button>
                 </li>
             );
-
+            */
             if (!this.props.isDefault) {
+                /*
                 dropdownContents.push(
                     <li
                         key='divider-1'
                         className='divider'
                     />
                 );
-
+                */
                 dropdownContents.push(
                     <ChannelPermissionGate
                         channelId={channel.id}
@@ -635,7 +636,7 @@ export default class ChannelHeader extends React.Component {
                     </ChannelPermissionGate>
                 );
 
-                dropdownContents.push(
+                /*dropdownContents.push(
                     <ChannelPermissionGate
                         channelId={channel.id}
                         teamId={teamId}
@@ -661,6 +662,7 @@ export default class ChannelHeader extends React.Component {
                         </li>
                     </ChannelPermissionGate>
                 );
+                */
             }
 
             if (!this.props.isReadOnly) {
@@ -671,10 +673,13 @@ export default class ChannelHeader extends React.Component {
                         permissions={[isPrivate ? Permissions.MANAGE_PRIVATE_CHANNEL_PROPERTIES : Permissions.MANAGE_PUBLIC_CHANNEL_PROPERTIES]}
                         key='set_channel_info_permission'
                     >
+                        { /*
                         <li
                             key='divider-2'
                             className='divider'
                         />
+                        */
+                        }
 
                         <li
                             key='set_channel_header'
@@ -694,6 +699,7 @@ export default class ChannelHeader extends React.Component {
                             </ToggleModalButtonRedux>
                         </li>
 
+                        {/*
                         <li
                             key='set_channel_purpose'
                             role='presentation'
@@ -710,6 +716,8 @@ export default class ChannelHeader extends React.Component {
                                 />
                             </button>
                         </li>
+                        */
+                        }
 
                         <li
                             key='rename_channel'
@@ -851,7 +859,7 @@ export default class ChannelHeader extends React.Component {
             );
         } else {
             let editMessage;
-            if (!this.props.isReadOnly) {
+            if (!this.props.isReadOnly && false) {
                 if (isDirect || isGroup) {
                     editMessage = (
                         <button
@@ -907,7 +915,7 @@ export default class ChannelHeader extends React.Component {
         }
 
         let toggleFavoriteTooltip;
-        if (this.props.isFavorite) {
+        /*if (this.props.isFavorite) {
             toggleFavoriteTooltip = (
                 <Tooltip id='favoriteTooltip'>
                     <FormattedMessage
@@ -926,6 +934,7 @@ export default class ChannelHeader extends React.Component {
                 </Tooltip>
             );
         }
+        */
 
         const toggleFavorite = (
             <OverlayTrigger
@@ -1011,7 +1020,8 @@ export default class ChannelHeader extends React.Component {
                             id='channelHeaderInfo'
                             className='channel-header__info'
                         >
-                            {toggleFavorite}
+                            {//toggleFavorite
+                            }
                             <div
                                 id='channelHeaderTitle'
                                 className='channel-header__title dropdown'
@@ -1050,7 +1060,9 @@ export default class ChannelHeader extends React.Component {
                         </div>
                     </div>
                     <div className='flex-child'>
-                        {webrtc}
+                        {
+                            //webrtc
+                        }
                     </div>
                     <div className='flex-child'>
                         {popoverListMembers}
@@ -1058,7 +1070,8 @@ export default class ChannelHeader extends React.Component {
                     <div className='flex-child'>
                         <Pluggable pluggableName='ChannelHeaderButton'/>
                     </div>
-                    <HeaderIconWrapper
+                    {
+                    /*<HeaderIconWrapper
                         iconComponent={
                             <PinIcon
                                 className='icon icon__pin'
@@ -1090,7 +1103,10 @@ export default class ChannelHeader extends React.Component {
                             tooltipKey={'search'}
                         />
                     )}
-                    <HeaderIconWrapper
+                    */ 
+                    }
+                    {
+                    /*<HeaderIconWrapper
                         iconComponent={
                             <MentionsIcon
                                 className='icon icon__mentions'
@@ -1108,7 +1124,8 @@ export default class ChannelHeader extends React.Component {
                         buttonId={'channelHeaderFlagButton'}
                         onClick={this.getFlagged}
                         tooltipKey={'flaggedPosts'}
-                    />
+                    />*/
+                    }
                 </div>
                 {editHeaderModal}
                 {editPurposeModal}
