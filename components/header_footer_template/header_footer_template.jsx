@@ -61,7 +61,7 @@ export default class NotLoggedIn extends React.PureComponent {
             );
         }
 
-        if (this.props.config.TermsOfServiceLink) {
+        if (this.props.config.TermsOfServiceLink && false) {
             content.push(
                 <a
                     key='terms_link'
@@ -99,11 +99,11 @@ export default class NotLoggedIn extends React.PureComponent {
                 <div className='row footer'>
                     <div className='footer-pane col-xs-12'>
                         <div className='col-xs-12'>
-                            <span className='pull-right footer-site-name'>{'Mattermost'}</span>
+                            <span className='pull-right footer-site-name'>{'Muttermost'}</span>
                         </div>
                         <div className='col-xs-12'>
                             <span className='pull-right footer-link copyright'>
-                                {`© 2015-${new Date().getFullYear()} Mattermost, Inc.`}
+                                {`© 2018-${new Date().getFullYear()} Muttermost`}
                             </span>
                             <span className='pull-right'>
                                 {content}
